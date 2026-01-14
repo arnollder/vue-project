@@ -1,21 +1,23 @@
 <template>
   <div class="root">
-    <header class="header">Header</header>
+    <Header title="Header" />
     <section class="content">
-      <h1 :style="{color: isMainPageTitleGreen ? 'green' : 'black'}">Main Page</h1>
+      <h1 :style="{ color: isMainPageTitleGreen ? 'green' : 'black' }">Main Page</h1>
       <ClickCounter @decrement="decrementHandler" :title="$options.title" />
     </section>
-    <footer class="footer">Footer {{ new Date().getFullYear() }}</footer>
+    <Footer title="Footer" />
   </div>
 </template>
 
 <script lang="ts">
 import ClickCounter from '@/components/ClickCounter.vue'
+import Footer from '@/components/layouts/Footer.vue';
+import Header from '@/components/layouts/Header.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'TestComponent',
-  components: { ClickCounter },
+  components: { ClickCounter, Header, Footer },
   data() {
     return {
       isMainPageTitleGreen: false,
@@ -38,6 +40,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
 }
+
 .header,
 .footer {
   height: 100px;
@@ -47,6 +50,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
 }
+
 .content {
   flex-grow: 1;
   padding: 10px;
