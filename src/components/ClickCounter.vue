@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="counter">
-      <h2 :style="counterTitleColor">Counter</h2>
+      <h2 :style="counterTitleColor">{{ title }}</h2>
       <div>Count: {{ count }}</div>
       <div>Double count {{ doubleCount }}</div>
     </div>
@@ -19,6 +19,12 @@ export default defineComponent({
     return {
       count: 0,
     }
+  },
+  props: {
+    title: {
+      type: String,
+      default: 'Default counter title'
+    },
   },
   computed: {
     doubleCount() {

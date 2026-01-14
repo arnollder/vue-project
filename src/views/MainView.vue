@@ -3,7 +3,7 @@
     <header class="header">Header</header>
     <section class="content">
       <h1>Main Page</h1>
-      <ClickCounter />
+      <ClickCounter :title="$options.title" />
     </section>
     <footer class="footer">Footer {{ new Date().getFullYear() }}</footer>
   </div>
@@ -16,6 +16,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'TestComponent',
   components: { ClickCounter },
+  title: 'Our counter title',
 })
 </script>
 
