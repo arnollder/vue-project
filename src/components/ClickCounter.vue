@@ -23,9 +23,10 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      default: 'Default counter title'
+      default: 'Default counter title',
     },
   },
+  emits: ['decrement'],
   computed: {
     doubleCount() {
       return this.count * 2
@@ -43,8 +44,9 @@ export default defineComponent({
     },
 
     decrement() {
-      this.showDecrement()
-      this.count--
+        // this.showDecrement()
+        this.count--
+        this.$emit('decrement', this.count)
     },
     reset() {
       this.count = 0

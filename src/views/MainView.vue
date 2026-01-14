@@ -2,8 +2,8 @@
   <div class="root">
     <header class="header">Header</header>
     <section class="content">
-      <h1>Main Page</h1>
-      <ClickCounter :title="$options.title" />
+      <h1 :style="{color: isMainPageTitleGreen ? 'green' : 'black'}">Main Page</h1>
+      <ClickCounter @decrement="decrementHandler" :title="$options.title" />
     </section>
     <footer class="footer">Footer {{ new Date().getFullYear() }}</footer>
   </div>
@@ -16,7 +16,18 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'TestComponent',
   components: { ClickCounter },
+  data() {
+    return {
+      isMainPageTitleGreen: false,
+    }
+  },
   title: 'Our counter title',
+  methods: {
+    decrementHandler(event: number) {
+      this.isMainPageTitleGreen = event < -5 ? true : false
+      console.log('decrement-handler', event)
+    },
+  },
 })
 </script>
 
