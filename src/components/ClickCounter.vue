@@ -74,9 +74,11 @@ button {
   border-radius: 5px;
   margin-right: 5px;
   cursor: pointer;
-  transition: 0.5s;
+  /* transition: 0.5s; */
 }
 button:hover {
   color: darkslategray;
+  border: 1px solid darkslategray;
+  font-weight: 700;
 }
 </style>
