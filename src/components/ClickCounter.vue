@@ -7,8 +7,7 @@
     </div>
     <button @click="increment">Increment++</button>
     <button @click="decrement">Decrement--</button>
-    <button @click="reset">Reset</button>
-  </div>
+    <button @click="reset">Reset</button>  </div>
 </template>
 
 <script lang="ts">

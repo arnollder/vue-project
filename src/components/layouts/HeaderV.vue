@@ -1,6 +1,9 @@
 <template>
   <header class="header">{{ title }}
-    <SwitchTheme />
+    <!-- <SwitchTheme /> -->
+    <button class="switch" @click="isDarkTheme">
+      Switch Theme
+    </button>
   </header>
 </template>
 
@@ -10,12 +13,24 @@ import SwitchTheme from '../SwitchTheme.vue';
 
 export default defineComponent({
   name: 'VHeader',
-  components: {SwitchTheme},
+  components: { SwitchTheme },
+  data() {
+    return {
+      isDark: true,
+    }
+  },
   props: {
     title: {
       type: String,
       default: 'default header',
     },
+  },
+  emits: ['isDarkTheme'],
+  methods: {
+    isDarkTheme() {
+      !this.isDark ? this.isDark = true : this.isDark = false;
+      console.log(this.isDark);
+    }
   },
 })
 </script>
@@ -28,5 +43,22 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.switch {
+  padding: 5px;
+  width: 110px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.switch:hover {
+  color: darkslategray;
+  border: 3px solid darkslategray;
+  font-weight: 700;
 }
 </style>
