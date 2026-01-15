@@ -67,18 +67,30 @@ export default defineComponent({
 </script>
 
 <style scoped>
-button {
+/* button {
   padding: 5px 10px;
   border: none;
   background-color: rgb(74, 226, 74);
   border-radius: 5px;
   margin-right: 5px;
   cursor: pointer;
-  /* transition: 0.5s; */
 }
 button:hover {
   color: darkslategray;
   border: 1px solid darkslategray;
+  font-weight: 700;
+} */
+button {
+  margin-right: 5px;
+  padding: 5px;
+  width: 110px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  color: darkslategray;
+  border: 2px solid darkslategray;
   font-weight: 700;
 }
 </style>
