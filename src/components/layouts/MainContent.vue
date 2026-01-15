@@ -1,18 +1,8 @@
 <template>
-  <div class="container">
-    <nav class="sidebar">
-      <ul class="menu">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Счётчик кликов</a></li>
-        <li><a href="#">Какая-то кнопка</a></li>
-        <li><a href="#">Обратная связь</a></li>
-      </ul>
-    </nav>
     <section class="content">
-      <h1 :style="{ color: isMainPageTitleGreen ? 'green' : 'black' }">Main Page</h1>
+      <h1 :style="{ color: isMainPageTitleGreen ? 'green' : 'black' }">{{ title }}</h1>
       <ClickCounter @decrement="decrementHandler" :title="$options.title" />
     </section>
-  </div>
 </template>
 
 <script lang="ts">
@@ -20,10 +10,17 @@ import { defineComponent } from 'vue'
 import ClickCounter from '@/components/ClickCounter.vue'
 
 export default defineComponent({
+  name: 'MainContent',
   components: { ClickCounter },
   data() {
     return {
       isMainPageTitleGreen: false,
+    }
+  },
+  props: {
+    title: {
+      type: String,
+      default: 'default title',
     }
   },
   title: 'Our counter title',
@@ -37,27 +34,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  flex-grow: 1;
-  padding: 10px;
-}
-
-.sidebar {
-  padding: 10px;
-  border: 3px solid gray;
-}
-
-.menu {
-  list-style: none;
-}
-li {
-  margin: 5px;
-}
-a {
-  color: black;
-}
-
 .content {
   padding: 10px;
   flex-grow: 1;

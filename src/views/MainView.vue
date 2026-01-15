@@ -1,20 +1,24 @@
 <template>
   <div class="root">
     <HeaderV title="Header" />
-    <ContainerV />
+    <div class="container">
+      <MainContent title="Main Page"/>
+      <SidebarNav />
+    </div>
     <FooterV title="Footer" />
   </div>
 </template>
 
 <script lang="ts">
-import ContainerV from '@/components/layouts/ContainerV.vue'
+import MainContent from '@/components/layouts/MainContent.vue'
 import FooterV from '@/components/layouts/FooterV.vue'
 import HeaderV from '@/components/layouts/HeaderV.vue'
+import SidebarNav from '@/components/layouts/SidebarNav.vue';
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'TestComponent',
-  components: { ContainerV, HeaderV, FooterV },  
+  components: { SidebarNav, MainContent, HeaderV, FooterV },  
 })
 </script>
 
@@ -24,5 +28,10 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.container {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
 }
 </style>
