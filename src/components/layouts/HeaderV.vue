@@ -1,11 +1,16 @@
 <template>
-  <header class="header">{{ title }}</header>
+  <header class="header">{{ title }}
+    <SwitchTheme />
+  </header>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import SwitchTheme from '../SwitchTheme.vue';
 
 export default defineComponent({
+  name: 'VHeader',
+  components: {SwitchTheme},
   props: {
     title: {
       type: String,

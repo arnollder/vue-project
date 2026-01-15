@@ -2,8 +2,8 @@
   <div class="root">
     <HeaderV title="Header" />
     <div class="container">
-      <MainContent title="Main Page"/>
-      <SidebarNav />
+      <MainContent class="border" title="Main Page"/>
+      <SidebarNav class="border"/>
     </div>
     <FooterV title="Footer" />
   </div>
@@ -31,7 +31,11 @@ export default defineComponent({
 }
 .container {
   display: flex;
+  column-gap: 10px;
   flex-grow: 1;
   padding: 10px;
+}
+.border {
+  border: 3px solid gray;
 }
 </style>

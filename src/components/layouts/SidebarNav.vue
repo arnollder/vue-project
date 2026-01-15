@@ -20,7 +20,6 @@ export default defineComponent({
 <style scoped>
 .sidebar {
   padding: 10px;
-  border: 3px solid gray;
 }
 .menu {
   list-style: none;
