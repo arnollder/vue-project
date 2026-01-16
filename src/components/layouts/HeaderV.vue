@@ -16,7 +16,7 @@ export default defineComponent({
   // components: { SwitchTheme },
   data() {
     return {
-      isDark: true,
+      isDark: false,
     }
   },
   props: {

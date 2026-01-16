@@ -1,24 +1,42 @@
 <template>
-  <div class="root">
-    <HeaderV @is-dark-theme="isDarkThemeHandler" title="Header" />
+  <div class="root"
+    :style="{
+          'background-color': isDarkTheme ? 'darkgray' : null,
+          // color: isDarkTheme ? 'white' : 'black',
+        }"
+  >
+    <HeaderV 
+      @is-dark-theme="isDarkThemeHandler" 
+      title="Header" 
+      :style="{
+          'background-color': isDarkTheme ? '#36373a' : null,
+          color: isDarkTheme ? 'darkgray' : 'black',
+        }"
+    />
     <div class="container">
       <MainContent
         class="border"
         title="Main Page"
         :style="{
-          'background-color': isDarkTheme ? 'black' : 'white',
-          color: isDarkTheme ? 'white' : 'black',
+          'background-color': isDarkTheme ? '#36373a' : 'white',
+          color: isDarkTheme ? 'darkgray' : 'black',
         }"
       />
       <SidebarNav
         :style="{
-          'background-color': isDarkTheme ? 'black' : 'white',
-          color: isDarkTheme ? 'white' : 'black',
+          'background-color': isDarkTheme ? '#36373a' : 'white',
+          color: isDarkTheme ? 'darkgray' : 'black',
         }"
         class="border"
       />
     </div>
-    <FooterV title="Footer" />
+    <FooterV 
+      title="Footer"
+      :style="{
+          'background-color': isDarkTheme ? '#36373a' : null,
+          color: isDarkTheme ? 'darkgray' : 'black',
+        }"      
+    />
   </div>
 </template>
 
@@ -40,8 +58,8 @@ export default defineComponent({
   methods: {
     isDarkThemeHandler(isDark: Boolean) {
       this.isDarkTheme = isDark ? true : false
-      console.log('parent say:', this.isDarkTheme)
-      console.log('parent say:', isDark)
+      // console.log('parent say:', this.isDarkTheme)
+      // console.log('parent say:', isDark)
     },
   },
 })
