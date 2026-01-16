@@ -9,11 +9,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import SwitchTheme from '../SwitchTheme.vue';
+// import SwitchTheme from '../SwitchTheme.vue';
 
 export default defineComponent({
   name: 'VHeader',
-  components: { SwitchTheme },
+  // components: { SwitchTheme },
   data() {
     return {
       isDark: true,
@@ -29,7 +29,8 @@ export default defineComponent({
   methods: {
     isDarkTheme() {
       !this.isDark ? this.isDark = true : this.isDark = false;
-      console.log(this.isDark);
+      this.$emit('isDarkTheme', this.isDark)
+      // console.log(this.isDark);
     }
   },
 })

@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <HeaderV title="Header" />
+    <HeaderV @is-dark-theme="isDarkThemeHandler" title="Header" />
     <div class="container">
       <MainContent class="border" title="Main Page"/>
       <SidebarNav class="border"/>
@@ -18,7 +18,18 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'TestComponent',
-  components: { SidebarNav, MainContent, HeaderV, FooterV },  
+  components: { SidebarNav, MainContent, HeaderV, FooterV },    
+  data() {
+    return {
+      isDarkTheme: false,
+    }
+  },  
+  methods: {
+    isDarkThemeHandler(isDark: Boolean) {
+      this.isDarkTheme = isDark === true ? true : false
+      console.log('parent say:', isDark)
+    }
+  }
 })
 </script>
 
