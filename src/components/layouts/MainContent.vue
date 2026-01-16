@@ -1,6 +1,7 @@
 <template>
     <section class="content">
-      <h1 :style="{ color: isMainPageTitleGreen ? 'green' : 'black' }">{{ title }}</h1>
+      <!-- <h1 :style="{ color: isMainPageTitleGreen ? 'green' : 'black' }">{{ title }}</h1> -->
+      <h1>{{ title }}</h1>
       <ClickCounter @decrement="decrementHandler" :title="$options.title" />
     </section>
 </template>

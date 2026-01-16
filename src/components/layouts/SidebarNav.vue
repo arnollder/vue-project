@@ -5,6 +5,11 @@
       <li><a href="#">Счётчик кликов</a></li>
       <li><a href="#">Какая-то кнопка</a></li>
       <li><a href="#">Обратная связь</a></li>
+      <li>Главная</li>
+      <li>Счётчик кликов</li>
+      <li>Какая-то кнопка</li>
+      <li>Обратная связь</li>
+
     </ul>
   </nav>
 </template>
@@ -20,6 +25,7 @@ export default defineComponent({
 <style scoped>
 .sidebar {
   padding: 10px;
+  color: inherit;
 }
 .menu {
   list-style: none;
