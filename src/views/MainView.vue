@@ -1,26 +1,26 @@
 <template>
   <div class="root"
-    :style="darkStyle"
+    :style="switchTheme"
   >
     <HeaderV 
       @is-dark-theme="isDarkThemeHandler" 
       title="Header" 
-      :style="darkStyle"
+      :style="switchTheme"
     />
     <div class="container">
       <MainContent
         class="border"
         title="Main Page"
-        :style="darkStyle"
+        :style="switchTheme"
       />
       <SidebarNav
-        :style="darkStyle"
+        :style="switchTheme"
         class="border"
       />
     </div>
     <FooterV 
       title="Footer"
-      :style="darkStyle"      
+      :style="switchTheme"      
     />
   </div>
 </template>
@@ -41,7 +41,7 @@ export default defineComponent({
     }
   },
   computed: {
-    darkStyle() {
+    switchTheme() {
       return {
           'background-color': this.isDarkTheme ? '#36373a' : 'white',
           color: this.isDarkTheme ? 'darkgray' : 'black',
@@ -51,8 +51,6 @@ export default defineComponent({
   methods: {
     isDarkThemeHandler(isDark: Boolean) {
       this.isDarkTheme = isDark ? true : false
-      // console.log('parent say:', this.isDarkTheme)
-      // console.log('parent say:', isDark)
     },
   },
 })
