@@ -1,41 +1,26 @@
 <template>
   <div class="root"
-    :style="{
-          'background-color': isDarkTheme ? 'darkgray' : null,
-          // color: isDarkTheme ? 'white' : 'black',
-        }"
+    :style="darkStyle"
   >
     <HeaderV 
       @is-dark-theme="isDarkThemeHandler" 
       title="Header" 
-      :style="{
-          'background-color': isDarkTheme ? '#36373a' : null,
-          color: isDarkTheme ? 'darkgray' : 'black',
-        }"
+      :style="darkStyle"
     />
     <div class="container">
       <MainContent
         class="border"
         title="Main Page"
-        :style="{
-          'background-color': isDarkTheme ? '#36373a' : 'white',
-          color: isDarkTheme ? 'darkgray' : 'black',
-        }"
+        :style="darkStyle"
       />
       <SidebarNav
-        :style="{
-          'background-color': isDarkTheme ? '#36373a' : 'white',
-          color: isDarkTheme ? 'darkgray' : 'black',
-        }"
+        :style="darkStyle"
         class="border"
       />
     </div>
     <FooterV 
       title="Footer"
-      :style="{
-          'background-color': isDarkTheme ? '#36373a' : null,
-          color: isDarkTheme ? 'darkgray' : 'black',
-        }"      
+      :style="darkStyle"      
     />
   </div>
 </template>
@@ -53,6 +38,14 @@ export default defineComponent({
   data() {
     return {
       isDarkTheme: false,
+    }
+  },
+  computed: {
+    darkStyle() {
+      return {
+          'background-color': this.isDarkTheme ? '#36373a' : 'white',
+          color: this.isDarkTheme ? 'darkgray' : 'black',
+        }
     }
   },
   methods: {
