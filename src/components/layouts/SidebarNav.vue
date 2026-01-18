@@ -1,15 +1,10 @@
 <template>
-  <nav class="sidebar">
+  <nav class="sidebar" :style="themeStyles">
     <ul class="menu">
-      <li><a href="#">Главная</a></li>
-      <li><a href="#">Счётчик кликов</a></li>
-      <li><a href="#">Какая-то кнопка</a></li>
-      <li><a href="#">Обратная связь</a></li>
-      <li>Главная</li>
-      <li>Счётчик кликов</li>
-      <li>Какая-то кнопка</li>
-      <li>Обратная связь</li>
-
+      <li><a href="#" :style="themeStyles">Главная</a></li>
+      <li><a href="#" :style="themeStyles">Счётчик кликов</a></li>
+      <li><a href="#" :style="themeStyles">Какая-то кнопка</a></li>
+      <li><a href="#" :style="themeStyles">Обратная связь</a></li>    
     </ul>
   </nav>
 </template>
@@ -19,6 +14,12 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'SidebarNav',
+  props: {
+    themeStyles: {
+      type: Object,
+      default: () => ({})
+    }
+  }
 })
 </script>
 

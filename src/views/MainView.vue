@@ -14,7 +14,7 @@
         :style="switchTheme"
       />
       <SidebarNav
-        :style="switchTheme"
+        :theme-styles="switchTheme"
         class="border"
       />
     </div>
