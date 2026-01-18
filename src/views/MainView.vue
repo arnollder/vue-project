@@ -11,7 +11,7 @@
       <MainContent
         class="border"
         title="Main Page"
-        :style="switchTheme"
+        :theme-styles="switchTheme"
       />
       <SidebarNav
         :theme-styles="switchTheme"

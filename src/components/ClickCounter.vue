@@ -1,13 +1,18 @@
 <template>
   <div>
     <div class="counter">
-      <h2 :style="counterTitleColor">{{ title }}</h2>
+      <h2 
+        :style="counterTitleColor"
+        :theme-styles="themeStyles"
+      >
+        {{ title }}
+      </h2>
       <div>Count: {{ count }}</div>
       <div>Double count {{ doubleCount }}</div>
     </div>
-    <button @click="increment">Increment++</button>
-    <button @click="decrement">Decrement--</button>
-    <button @click="reset">Reset</button>  </div>
+    <button :style="themeStyles" @click="increment">Increment++</button>
+    <button :style="themeStyles" @click="decrement">Decrement--</button>
+    <button :style="themeStyles" @click="reset">Reset</button>  </div>
 </template>
 
 <script lang="ts">
@@ -24,6 +29,10 @@ export default defineComponent({
       type: String,
       default: 'Default counter title',
     },
+    themeStyles: {
+      type: Object,
+      default: () => ({})
+    }
   },
   emits: ['decrement'],
   computed: {
@@ -66,19 +75,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* button {
-  padding: 5px 10px;
-  border: none;
-  background-color: rgb(74, 226, 74);
-  border-radius: 5px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-button:hover {
-  color: darkslategray;
-  border: 1px solid darkslategray;
-  font-weight: 700;
-} */
 button {
   margin-right: 5px;
   padding: 5px;

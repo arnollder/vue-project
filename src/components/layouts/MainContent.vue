@@ -1,8 +1,7 @@
 <template>
-    <section class="content">
-      <!-- <h1 :style="{ color: isMainPageTitleGreen ? 'green' : 'black' }">{{ title }}</h1> -->
+    <section class="content" :style="themeStyles">
       <h1>{{ title }}</h1>
-      <ClickCounter @decrement="decrementHandler" :title="$options.title" />
+      <ClickCounter @decrement="decrementHandler" :title="$options.title" :style="themeStyles"/>
     </section>
 </template>
 
@@ -22,6 +21,10 @@ export default defineComponent({
     title: {
       type: String,
       default: 'default title',
+    },
+    themeStyles: {
+      type: Object,
+      default: () => ({})
     }
   },
   title: 'Our counter title',
