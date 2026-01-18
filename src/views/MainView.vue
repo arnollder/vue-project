@@ -1,11 +1,11 @@
 <template>
   <div class="root"
-    :style="switchTheme"
+    :style="switchThemeMain"
   >
     <HeaderV 
       @is-dark-theme="isDarkThemeHandler" 
       title="Header" 
-      :style="switchTheme"
+      :style="switchThemeHeaderFooter"
     />
     <div class="container">
       <MainContent
@@ -20,7 +20,7 @@
     </div>
     <FooterV 
       title="Footer"
-      :style="switchTheme"      
+      :style="switchThemeHeaderFooter"      
     />
   </div>
 </template>
@@ -44,6 +44,17 @@ export default defineComponent({
     switchTheme() {
       return {
           'background-color': this.isDarkTheme ? '#36373a' : 'white',
+          color: this.isDarkTheme ? 'darkgray' : 'black',
+        }
+    },
+    switchThemeMain() {
+      return {
+          'background-color': this.isDarkTheme ? 'darkgray' : null,
+        }
+    },
+    switchThemeHeaderFooter() {
+      return {
+          'background-color': this.isDarkTheme ? '#36373a' : null,
           color: this.isDarkTheme ? 'darkgray' : 'black',
         }
     }
