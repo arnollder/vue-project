@@ -1,9 +1,8 @@
 <template>
   <div>
     <div class="counter">
-      <h2 
-        :style="counterTitleColor"
-        :theme-styles="themeStyles"
+      <h2       
+        :style="[themeStyles, counterTitleColor]"
       >
         {{ title }}
       </h2>
@@ -40,8 +39,12 @@ export default defineComponent({
       return this.count * 2
     },
     counterTitleColor() {
-      return { color: this.count > 5 ? 'red' : 'black' }
-    },
+      const styles = {...this.themeStyles}
+      if (this.count > 5) {
+        styles.color = 'red'
+      }
+      return styles
+    }    
   },
   methods: {
     showDecrement() {
