@@ -1,7 +1,7 @@
 <template>
     <section class="content" :style="themeStyles">
       <h1>{{ title }}</h1>
-      <ClickCounter @decrement="decrementHandler" :title="$options.title" :style="themeStyles"/>
+      <ClickCounter @decrement="decrementHandler" :title="$options.title" :theme-styles="themeStyles"/>
     </section>
 </template>
 
