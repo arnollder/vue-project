@@ -61,7 +61,7 @@ export default defineComponent({
   },
   methods: {
     toggleThemeHandler(isDark: boolean) {
-      this.isDarkTheme = isDark ? true : false
+      this.isDarkTheme = !this.isDarkTheme
     },
   },
 })
