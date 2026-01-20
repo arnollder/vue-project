@@ -49,12 +49,12 @@ export default defineComponent({
     },
     switchThemeMain() {
       return {
-          'background-color': this.isDarkTheme ? 'darkgray' : null,
+          'background-color': this.isDarkTheme ? 'darkgray' : 'white',
         }
     },
     switchThemeHeaderFooter() {
       return {
-          'background-color': this.isDarkTheme ? '#36373a' : null,
+          'background-color': this.isDarkTheme ? '#36373a' : 'gray',
           color: this.isDarkTheme ? 'darkgray' : 'black',
         }
     }
