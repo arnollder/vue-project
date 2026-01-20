@@ -6,12 +6,14 @@
       @is-dark-theme="toggleThemeHandler" 
       title="Header" 
       :style="switchThemeHeaderFooter"
+      :buttonsTheme="buttonsTheme"
     />
     <div class="container">
       <MainContent
         class="border"
         title="Main Page"
         :theme-styles="switchTheme"
+        :buttonsTheme="buttonsTheme"
       />
       <SidebarNav
         :theme-styles="switchTheme"
@@ -56,6 +58,11 @@ export default defineComponent({
       return {
           'background-color': this.isDarkTheme ? '#36373a' : 'gray',
           color: this.isDarkTheme ? 'darkgray' : 'black',
+        }
+    },
+    buttonsTheme() {
+      return {
+          'background-color': this.isDarkTheme ? 'gray' : 'white',
         }
     }
   },

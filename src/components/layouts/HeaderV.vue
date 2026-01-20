@@ -1,7 +1,11 @@
 <template>
   <header class="header">{{ title }}
     <!-- <SwitchTheme /> -->
-    <button class="switch" @click="toggleTheme">
+    <button 
+      class="switch" 
+      @click="toggleTheme"
+      :style="buttonsTheme"
+    >
       Switch Theme
     </button>
   </header>
@@ -24,6 +28,11 @@ export default defineComponent({
       type: String,
       default: 'default header',
     },
+    buttonsTheme: {
+      type: Object,
+      default: () => ({})
+    },
+
   },
   emits: ['isDarkTheme'],
   methods: {

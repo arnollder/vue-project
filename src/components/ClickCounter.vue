@@ -9,9 +9,9 @@
       <div>Count: {{ count }}</div>
       <div>Double count {{ doubleCount }}</div>
     </div>
-    <button :style="themeStyles" @click="increment">Increment++</button>
-    <button :style="themeStyles" @click="decrement">Decrement--</button>
-    <button :style="themeStyles" @click="reset">Reset</button>  </div>
+    <button :style="buttonsTheme" @click="increment">Increment++</button>
+    <button :style="buttonsTheme" @click="decrement">Decrement--</button>
+    <button :style="buttonsTheme" @click="reset">Reset</button>  </div>
 </template>
 
 <script lang="ts">
@@ -29,6 +29,10 @@ export default defineComponent({
       default: 'Default counter title',
     },
     themeStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    buttonsTheme: {
       type: Object,
       default: () => ({})
     }

@@ -1,7 +1,12 @@
 <template>
     <section class="content" :style="themeStyles">
       <h1>{{ title }}</h1>
-      <ClickCounter @decrement="decrementHandler" :title="$options.title" :theme-styles="themeStyles"/>
+      <ClickCounter 
+        @decrement="decrementHandler" 
+        :title="$options.title" 
+        :theme-styles="themeStyles"
+        :buttonsTheme="buttonsTheme"
+      />
     </section>
 </template>
 
@@ -23,6 +28,10 @@ export default defineComponent({
       default: 'default title',
     },
     themeStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    buttonsTheme: {
       type: Object,
       default: () => ({})
     }
