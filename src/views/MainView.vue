@@ -60,7 +60,7 @@ export default defineComponent({
     }
   },
   methods: {
-    isDarkThemeHandler(isDark: Boolean) {
+    isDarkThemeHandler(isDark: boolean) {
       this.isDarkTheme = isDark ? true : false
     },
   },
