@@ -28,7 +28,7 @@ export default defineComponent({
   emits: ['isDarkTheme'],
   methods: {
     toggleTheme() {
-      !this.isDark ? this.isDark = true : this.isDark = false;
+      this.isDark = !this.isDark
       this.$emit('isDarkTheme', this.isDark)
       // console.log(this.isDark);
     }
