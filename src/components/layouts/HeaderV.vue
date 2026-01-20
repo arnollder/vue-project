@@ -1,7 +1,7 @@
 <template>
   <header class="header">{{ title }}
     <!-- <SwitchTheme /> -->
-    <button class="switch" @click="isDarkTheme">
+    <button class="switch" @click="toggleTheme">
       Switch Theme
     </button>
   </header>
@@ -27,7 +27,7 @@ export default defineComponent({
   },
   emits: ['isDarkTheme'],
   methods: {
-    isDarkTheme() {
+    toggleTheme() {
       !this.isDark ? this.isDark = true : this.isDark = false;
       this.$emit('isDarkTheme', this.isDark)
       // console.log(this.isDark);

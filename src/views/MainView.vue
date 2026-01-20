@@ -3,7 +3,7 @@
     :style="switchThemeMain"
   >
     <HeaderV 
-      @is-dark-theme="isDarkThemeHandler" 
+      @is-dark-theme="toggleThemeHandler" 
       title="Header" 
       :style="switchThemeHeaderFooter"
     />
@@ -60,7 +60,7 @@ export default defineComponent({
     }
   },
   methods: {
-    isDarkThemeHandler(isDark: boolean) {
+    toggleThemeHandler(isDark: boolean) {
       this.isDarkTheme = isDark ? true : false
     },
   },
