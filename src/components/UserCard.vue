@@ -1,9 +1,11 @@
 <template>
     <div 
         class="user-root"
+        :style="buttonsTheme"
     >
         <div 
             class="user-info"
+            :style="themeStyles"
         >
             <div class="name">{{ $props.user?.name }}</div>
             <div class="age">age: {{ $props.user?.age }}</div>
@@ -18,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue'
+import { defineComponent, type PropType, type CSSProperties, } from 'vue'
 
 interface IUser {
     name: string,
@@ -37,7 +39,15 @@ export default defineComponent({
                 role: 'No Role',
                 img: 'https://static.bntu.by/bntu/new/staffs/photo_2163_8bd01886c446fc213afa7792f8f8e859.jpg'
             } as IUser),
-        },                
+        },  
+        themeStyles: {
+            type: Object as PropType<CSSProperties>,
+            default: () => ({})
+        },
+        buttonsTheme: {
+            type: Object as PropType<CSSProperties>,
+            default: () => ({})
+        }              
     },
 })
 </script>
@@ -45,13 +55,13 @@ export default defineComponent({
 <style scoped>
 .user-root {
     width: 300px;
-    height: 500px;
-    border: 1px solid black;
-    border-radius: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
+    row-gap: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .user-info {
     border: 1px solid black;

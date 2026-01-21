@@ -13,6 +13,8 @@
       <h2>Пользователи</h2>
       <div class="user-list">
         <UserCard 
+          :theme-styles="themeStyles"
+          :buttonsTheme="buttonsTheme"
           :user="{
             name: 'Sergey',
             age: 40,
@@ -21,6 +23,8 @@
           }"
         />
         <UserCard 
+          :theme-styles="themeStyles"
+          :buttonsTheme="buttonsTheme"
           :user="{
             name: 'Arnolder',
             age: 35,
