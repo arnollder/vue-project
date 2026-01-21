@@ -10,9 +10,9 @@
             <div class="role">role: {{ $props.user?.role }}</div>
         </div>
         <img 
-        :src="$props.user?.img" 
-        class="avatar" 
-        alt="avatar"
+            :src="$props.user?.img" 
+            class="avatar" 
+            alt="avatar"
         >
         <slot name="uppend"/>
     </div>
@@ -62,6 +62,7 @@ export default defineComponent({
     border: 1px solid black;
     border-radius: 5px;
     overflow: auto;
+    /* background-color: gray; */
 }
 .user-info {
     border: 1px solid black;

@@ -51,7 +51,7 @@ export default defineComponent({
     },
     switchThemeMain() {
       return {
-          'background-color': this.isDarkTheme ? 'darkgray' : 'white',
+          'background-color': this.isDarkTheme ? 'darkgray' : undefined,
         }
     },
     switchThemeHeaderFooter() {
@@ -62,7 +62,7 @@ export default defineComponent({
     },
     buttonsTheme() {
       return {
-          'background-color': this.isDarkTheme ? 'gray' : 'white',
+          'background-color': this.isDarkTheme ? 'gray' : undefined,
         }
     }
   },
