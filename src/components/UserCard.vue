@@ -20,5 +20,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+.user-root {
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 </style>

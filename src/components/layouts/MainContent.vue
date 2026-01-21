@@ -1,4 +1,5 @@
 <template>
+  <div class="main-content">
     <section class="content" :style="themeStyles">
       <h1>{{ title }}</h1>
       <ClickCounter 
@@ -12,6 +13,7 @@
       <h2>Пользователи</h2>
       <UserCard />
     </section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -53,6 +55,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.main-content {
+  display: block;
+  flex-grow: 1;
+}
 .content {
   padding: 10px;
   flex-grow: 1;
