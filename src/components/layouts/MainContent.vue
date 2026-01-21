@@ -77,6 +77,7 @@ export default defineComponent({
   flex-grow: 1;
 }
 .user-list {
+  margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

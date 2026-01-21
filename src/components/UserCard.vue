@@ -1,8 +1,14 @@
 <template>
-    <div class="user-root">
-        <div class="name">{{ $props.user?.name }}</div>
-        <div class="age">age: {{ $props.user?.age }}</div>
-        <div class="role">role: {{ $props.user?.role }}</div>
+    <div 
+        class="user-root"
+    >
+        <div 
+            class="user-info"
+        >
+            <div class="name">{{ $props.user?.name }}</div>
+            <div class="age">age: {{ $props.user?.age }}</div>
+            <div class="role">role: {{ $props.user?.role }}</div>
+        </div>
         <img 
             :src="$props.user?.img" 
             class="avatar" 
@@ -31,7 +37,7 @@ export default defineComponent({
                 role: 'No Role',
                 img: 'https://static.bntu.by/bntu/new/staffs/photo_2163_8bd01886c446fc213afa7792f8f8e859.jpg'
             } as IUser),
-        },
+        },                
     },
 })
 </script>
@@ -46,6 +52,11 @@ export default defineComponent({
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
+}
+.user-info {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 5px;
 }
 .avatar {
     width: 100%;
