@@ -1,8 +1,8 @@
 <template>
     <div class="user-root">
         <div class="name">{{ $props.user?.name }}</div>
-        <div class="age">{{ $props.user?.age }}</div>
-        <div class="role">{{ $props.user?.role }}</div>
+        <div class="age">age: {{ $props.user?.age }}</div>
+        <div class="role">role: {{ $props.user?.role }}</div>
         <img 
             :src="$props.user?.img" 
             class="avatar" 
