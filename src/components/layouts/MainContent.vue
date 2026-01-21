@@ -1,6 +1,6 @@
 <template>
-  <div class="main-content">
-    <section class="content" :style="themeStyles">
+  <div class="content" :style="themeStyles">
+    <section >
       <h1>{{ title }}</h1>
       <ClickCounter 
         @decrement="decrementHandler" 
@@ -55,10 +55,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.main-content {
-  display: block;
-  flex-grow: 1;
-}
 .content {
   padding: 10px;
   flex-grow: 1;
