@@ -8,15 +8,21 @@
         :buttonsTheme="buttonsTheme"
       />
     </section>
+    <section>
+      <h2>Пользователи</h2>
+      <UserCard />
+    </section>
 </template>
 
 <script lang="ts">
 import { defineComponent, type CSSProperties, type PropType } from 'vue'
 import ClickCounter from '@/components/ClickCounter.vue'
+import UserCard from '@/components/UserCard.vue'
+
 
 export default defineComponent({
   name: 'MainContent',
-  components: { ClickCounter },
+  components: { ClickCounter, UserCard },
   data() {
     return {
       isMainPageTitleGreen: false,
