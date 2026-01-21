@@ -11,7 +11,17 @@
     </section>
     <section>
       <h2>Пользователи</h2>
-      <UserCard />
+      <div class="user-list">
+        <UserCard 
+          :user="{
+            name: 'Sergey',
+            age: 40,
+            role: 'Teacher',
+            img: 'https://avatars.mds.yandex.net/i?id=b7add193de701e6d161b01a876c09b0e_l-5205087-images-thumbs&n=13'
+          }"
+        />
+        <UserCard />
+      </div>
     </section>
   </div>
 </template>
@@ -58,5 +68,10 @@ export default defineComponent({
 .content {
   padding: 10px;
   flex-grow: 1;
+}
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 </style>

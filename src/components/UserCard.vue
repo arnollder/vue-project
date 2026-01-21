@@ -1,21 +1,38 @@
 <template>
     <div class="user-root">
-        <div class="name">name: Sergey</div>
-        <div class="age">age: 40</div>
-        <div class="role">role: Teacher</div>
-        <img class="avatar" src="https://avatars.mds.yandex.net/i?id=b7add193de701e6d161b01a876c09b0e_l-5205087-images-thumbs&n=13" alt="avatar">
+        <div class="name">{{ $props.user?.name }}</div>
+        <div class="age">{{ $props.user?.age }}</div>
+        <div class="role">{{ $props.user?.role }}</div>
+        <img 
+            :src="$props.user?.img" 
+            class="avatar" 
+            alt="avatar"
+        >
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type PropType } from 'vue'
+
+interface IUser {
+    name: string,
+    age: number,
+    role: string,
+    img: string
+}
 
 export default defineComponent({
-    setup () {
-        
-
-        return {}
-    }
+    props: {
+        user: {
+            type: Object as PropType<IUser>,
+            default: () => ({
+                name: 'No Name',
+                age: 18,
+                role: 'No Role',
+                img: 'https://static.bntu.by/bntu/new/staffs/photo_2163_8bd01886c446fc213afa7792f8f8e859.jpg'
+            } as IUser),
+        },
+    },
 })
 </script>
 
@@ -35,5 +52,11 @@ export default defineComponent({
     height: auto;
     border: 1px solid black;
     border-radius: 5px;
+}
+.name {
+    font-size: 32px;
+}
+.age, .role {
+    font-size: 20px;
 }
 </style>
