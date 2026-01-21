@@ -3,19 +3,18 @@
         class="user-root"
         :style="buttonsTheme"
     >
-        <div 
-            class="user-info"
-            :style="themeStyles"
-        >
+        <div class="user-info" :style="themeStyles">
+            <slot name="prepend"/>
             <div class="name">{{ $props.user?.name }}</div>
             <div class="age">age: {{ $props.user?.age }}</div>
             <div class="role">role: {{ $props.user?.role }}</div>
         </div>
         <img 
-            :src="$props.user?.img" 
-            class="avatar" 
-            alt="avatar"
+        :src="$props.user?.img" 
+        class="avatar" 
+        alt="avatar"
         >
+        <slot name="uppend"/>
     </div>
 </template>
 
@@ -62,6 +61,7 @@ export default defineComponent({
     row-gap: 10px;
     border: 1px solid black;
     border-radius: 5px;
+    overflow: auto;
 }
 .user-info {
     border: 1px solid black;
@@ -80,4 +80,5 @@ export default defineComponent({
 .age, .role {
     font-size: 20px;
 }
+
 </style>

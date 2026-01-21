@@ -12,7 +12,7 @@
     <section>
       <h2>Пользователи</h2>
       <div class="user-list">
-        <UserCard 
+        <UserCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
@@ -21,8 +21,12 @@
             role: 'Teacher',
             img: 'https://avatars.mds.yandex.net/i?id=b7add193de701e6d161b01a876c09b0e_l-5205087-images-thumbs&n=13'
           }"
-        />
-        <UserCard 
+        >
+          <template #uppend>
+            <p>*направления: JS, Vue</p>
+          </template>
+        </UserCard>
+        <UserCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
@@ -31,7 +35,11 @@
             role: 'Student',
             img: 'https://avatars.mds.yandex.net/i?id=e0da91ccb22989c3c8329f39fcd9e6c9_l-9144721-images-thumbs&n=13'
           }"
-        />
+        >
+          <template #prepend>
+            <h2>Title</h2>
+          </template>
+        </UserCard>
       </div>
     </section>
   </div>
