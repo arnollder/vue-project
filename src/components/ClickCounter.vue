@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type CSSProperties, type PropType } from 'vue'
 
 export default defineComponent({
   data() {
@@ -29,11 +29,11 @@ export default defineComponent({
       default: 'Default counter title',
     },
     themeStyles: {
-      type: Object,
+      type: Object as PropType<CSSProperties>,
       default: () => ({})
     },
     buttonsTheme: {
-      type: Object,
+      type: Object as PropType<CSSProperties>,
       default: () => ({})
     }
   },

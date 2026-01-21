@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type CSSProperties, type PropType } from 'vue'
 // import SwitchTheme from '../SwitchTheme.vue';
 
 export default defineComponent({
@@ -29,7 +29,7 @@ export default defineComponent({
       default: 'default header',
     },
     buttonsTheme: {
-      type: Object,
+      type: Object as PropType<CSSProperties>,
       default: () => ({})
     },
 

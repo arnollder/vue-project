@@ -10,13 +10,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type CSSProperties, type PropType } from 'vue'
 
 export default defineComponent({
   name: 'SidebarNav',
   props: {
     themeStyles: {
-      type: Object,
+      type: Object as PropType<CSSProperties>,
       default: () => ({})
     }
   }

@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type CSSProperties, type PropType } from 'vue'
 import ClickCounter from '@/components/ClickCounter.vue'
 
 export default defineComponent({
@@ -28,11 +28,11 @@ export default defineComponent({
       default: 'default title',
     },
     themeStyles: {
-      type: Object,
+      type: Object as PropType<CSSProperties>,
       default: () => ({})
     },
     buttonsTheme: {
-      type: Object,
+      type: Object as PropType<CSSProperties>,
       default: () => ({})
     }
   },
