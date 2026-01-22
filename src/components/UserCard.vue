@@ -14,7 +14,7 @@
             class="avatar" 
             alt="avatar"
         >
-        <slot name="uppend"/>
+        <slot name="append"/>
     </div>
 </template>
 

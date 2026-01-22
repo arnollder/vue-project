@@ -1,15 +1,11 @@
 <template>
-  <div class="root"
-    :style="switchThemeMain"
+  <MainLayout
+    @click="toggleTheme"
+    :switchThemeHeaderFooter="switchThemeHeaderFooter"
+    :switchThemeMain="switchThemeMain"
+    :buttonsTheme="buttonsTheme"
   >
-    <HeaderV 
-      @is-dark-theme="toggleThemeHandler" 
-      title="Header" 
-      :style="switchThemeHeaderFooter"
-      :buttonsTheme="buttonsTheme"
-    />
-    <div class="container">
-      <MainContent
+    <MainContent
         class="border"
         title="Main Page"
         :theme-styles="switchTheme"
@@ -19,24 +15,18 @@
         :theme-styles="switchTheme"
         class="border"
       />
-    </div>
-    <FooterV 
-      title="Footer"
-      :style="switchThemeHeaderFooter"      
-    />
-  </div>
+  </MainLayout>
 </template>
 
 <script lang="ts">
-import MainContent from '@/components/layouts/MainContent.vue'
-import FooterV from '@/components/layouts/FooterV.vue'
-import HeaderV from '@/components/layouts/HeaderV.vue'
-import SidebarNav from '@/components/layouts/SidebarNav.vue'
+import MainContent from '@/components/MainContent.vue'
+import SidebarNav from '@/components/SidebarNav.vue'
+import MainLayout from '@/components/layouts/MainLayout.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'TestComponent',
-  components: { SidebarNav, MainContent, HeaderV, FooterV },
+  name: 'MainView',
+  components: { SidebarNav, MainContent, MainLayout},
   data() {
     return {
       isDarkTheme: false,
@@ -67,7 +57,7 @@ export default defineComponent({
     }
   },
   methods: {
-    toggleThemeHandler() {
+    toggleTheme() {
       this.isDarkTheme = !this.isDarkTheme
     },
   },

@@ -11,7 +11,7 @@
     </section>
     <section>
       <h2>Пользователи</h2>
-      <div class="user-list">
+      <div class="user-blok">
         <UserCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
@@ -22,7 +22,7 @@
             img: 'https://avatars.mds.yandex.net/i?id=b7add193de701e6d161b01a876c09b0e_l-5205087-images-thumbs&n=13'
           }"
         >
-          <template #uppend>
+          <template #append>
             <p>*направления: JS, Vue</p>
           </template>
         </UserCard>
@@ -88,7 +88,7 @@ export default defineComponent({
   padding: 10px;
   flex-grow: 1;
 }
-.user-list {
+.user-blok {
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
