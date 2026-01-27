@@ -5,7 +5,7 @@
         {{ title }}
       </h2>
       <div>Count: {{ count }}</div>
-      <div>Double count {{ doubleCount }}</div>
+      <!-- <div>Double count {{ doubleCount }}</div> -->
     </div>
     <button :style="buttonsTheme" @click="increment">Increment++</button>
     <button :style="buttonsTheme" @click="decrement">Decrement--</button>
@@ -14,15 +14,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, type PropType, type CSSProperties } from 'vue';
 
 const count = ref(0);
 
+// методы
 const increment = () => count.value++;
 const decrement = () => count.value--;
-const reset = () => count.value = 0;
+const reset = () => (count.value = 0);
+
+// пропсы
 
 
+const props = defineProps({
+    buttonsTheme: {
+        type: Object as PropType<CSSProperties>,
+        default: () => ({}),
+    },
+    themeStyles: {
+        type: Object as PropType<CSSProperties>,
+        default: () => ({}),
+    },
+    counterTitleColor: {
+        type: Object as PropType<CSSProperties>,
+        default: () => ({}),
+    },
+});
 </script>
 
 <style scoped>
