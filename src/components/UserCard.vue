@@ -59,10 +59,19 @@ export default defineComponent({
     flex-direction: column;
     justify-content: space-between;
     row-gap: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     overflow: auto;
     /* background-color: gray; */
+    box-shadow: 
+        0 0 5px rgba(2, 235, 21, 0.5),
+        0 0 10px rgba(2, 235, 21, 0.5),
+        0 0 15px rgba(2, 235, 21, 0.7);
+
+    /* box-shadow: 
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 15px #0ff; */
 }
 .user-info {
     border: 1px solid black;
