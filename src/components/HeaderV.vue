@@ -34,12 +34,12 @@ export default defineComponent({
     },
 
   },
-  emits: ['isDarkTheme'],
+  emits: ['toggleTheme'],
   methods: {
     toggleTheme() {
       this.isDark = !this.isDark
-      this.$emit('isDarkTheme', this.isDark)
-      // console.log(this.isDark);
+      this.$emit('toggleTheme', this.isDark)
+      console.log('header', this.isDark)
     }
   },
 })

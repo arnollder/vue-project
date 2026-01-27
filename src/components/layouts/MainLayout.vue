@@ -3,6 +3,7 @@
     :style="switchThemeMain"
   >
     <HeaderV 
+        @toggleTheme="toggleTheme"
         title="Header" 
         :style="switchThemeHeaderFooter"
         :buttonsTheme="buttonsTheme"
@@ -18,12 +19,17 @@
 </template>
 
 <script lang="ts">
+import { defineComponent, type CSSProperties, type PropType } from 'vue'
 import FooterV from '@/components/FooterV.vue'
 import HeaderV from '@/components/HeaderV.vue'
-import { defineComponent, type CSSProperties, type PropType } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
+  data() {
+    return {
+      isDark: false,
+    }
+  },
   components: { HeaderV, FooterV },
   props: {
     switchThemeHeaderFooter: {
@@ -39,7 +45,15 @@ export default defineComponent({
         default: () => ({}),
     }
   },
-  
+  emits: ['toggleTheme'],
+  methods: {
+    toggleTheme(event: boolean) {
+      this.isDark = event
+      //this.isDark = !this.isDark
+      this.$emit('toggleTheme', this.isDark)
+      console.log('MainLayout')
+    }
+  },  
 })
 </script>
 

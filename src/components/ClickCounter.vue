@@ -62,6 +62,7 @@ export default defineComponent({
         // this.showDecrement()
         this.count--
         this.$emit('decrement', this.count)
+        console.log('decrement from CC')
     },
     reset() {
       this.count = 0

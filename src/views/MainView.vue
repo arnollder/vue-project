@@ -1,6 +1,6 @@
 <template>
   <MainLayout
-    @click="toggleTheme"
+    @toggleTheme="toggleTheme"
     :switchThemeHeaderFooter="switchThemeHeaderFooter"
     :switchThemeMain="switchThemeMain"
     :buttonsTheme="buttonsTheme"
@@ -57,8 +57,9 @@ export default defineComponent({
     }
   },
   methods: {
-    toggleTheme() {
-      this.isDarkTheme = !this.isDarkTheme
+    toggleTheme(event: boolean) {
+      this.isDarkTheme = event
+      console.log(event)
     },
   },
 })
