@@ -1,28 +1,30 @@
 <template>
   <div class="content" :style="themeStyles">
-    <section >
+    <section>
       <h1>{{ title }}</h1>
-      <ClickCounter 
+      <!-- <ClickCounter 
         @decrement="decrementHandler" 
         :title="$options.title" 
         :theme-styles="themeStyles"
         :buttonsTheme="buttonsTheme"
-      />
+      /> -->
     </section>
     <section>
-      <h2>Пользователи</h2>
+      <h2>Летательные аппараты</h2>
       <div class="user-blok">
-
         <ProductCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
             name: 'Самолёт',
             model: 'Ил-103',
-            price: 14000000,
-            img: 'https://80.img.avito.st/image/1/1.mCLxM7a4NMvHmvbOzR3XNPOSNs1PkrbDh5c2yUGaPMFH.F_uNFpE1Q7RFSyqTuOYj19zatcYWiuKFH2cL8C92mCc'
+            price: '14 000 000',
+            img: 'https://80.img.avito.st/image/1/1.mCLxM7a4NMvHmvbOzR3XNPOSNs1PkrbDh5c2yUGaPMFH.F_uNFpE1Q7RFSyqTuOYj19zatcYWiuKFH2cL8C92mCc',
           }"
         >
+          <template #clickcounter>
+            <ClickCounter />
+          </template>
           <!-- <template #append>
             <p>*направления: JS, Vue</p>
           </template> -->
@@ -32,12 +34,15 @@
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
-            name: 'Самолет-амфибия',
+            name: 'Самолёт-амфибия',
             model: 'Lake-4-200',
-            price: 12000000,
-            img: 'https://00.img.avito.st/image/1/1.QvCMQra47hm66ywchFNV7vDj7B8y42wR-ubsGzzr5hM6.UyGn9HumuDOdRa2TU3psxWDizh6GlbSMByg6Xdx-07w?cqp=2.TSzMy-m0u9ojo94xoNTr4TIkcUBjMu1L_y5Z6Lr-VHA-3xfoRpsvf1jN4IBF36LEO13sxOCjYv9KRoXzpmAFvKTQ'
+            price: '12 000 000',
+            img: 'https://00.img.avito.st/image/1/1.QvCMQra47hm66ywchFNV7vDj7B8y42wR-ubsGzzr5hM6.UyGn9HumuDOdRa2TU3psxWDizh6GlbSMByg6Xdx-07w?cqp=2.TSzMy-m0u9ojo94xoNTr4TIkcUBjMu1L_y5Z6Lr-VHA-3xfoRpsvf1jN4IBF36LEO13sxOCjYv9KRoXzpmAFvKTQ',
           }"
         >
+          <template #clickcounter>
+            <ClickCounter />
+          </template>
           <!-- <template #prepend>
             <h2>Title</h2>
           </template> -->
@@ -47,24 +52,25 @@
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
-            name: 'Самолет',
+            name: 'Самолёт',
             model: 'Cessna 172B',
-            price: 12500000,
-            img: 'https://90.img.avito.st/image/1/1.B2A8Gba4q4kKsGmMPjlKGF64qY-CuCmBSr2pi4ywo4OK.eEYfp8xN_xSsdO7f4_MlCdMS2rLiUXoYYoU7jx3E0MA'
+            price: '12 500 000',
+            img: 'https://90.img.avito.st/image/1/1.B2A8Gba4q4kKsGmMPjlKGF64qY-CuCmBSr2pi4ywo4OK.eEYfp8xN_xSsdO7f4_MlCdMS2rLiUXoYYoU7jx3E0MA',
           }"
-        >          
+        >
+          <template #clickcounter>
+            <ClickCounter />
+          </template>
         </ProductCard>
-
       </div>
     </section>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, type CSSProperties, type PropType } from 'vue'
-import ClickCounter from '@/components/ClickCounter.vue'
-import ProductCard from '@/components/ProductCard.vue'
-
+import { defineComponent, type CSSProperties, type PropType } from 'vue';
+import ClickCounter from '@/components/ClickCounter.vue';
+import ProductCard from '@/components/ProductCard.vue';
 
 export default defineComponent({
   name: 'MainContent',
@@ -72,7 +78,7 @@ export default defineComponent({
   data() {
     return {
       isMainPageTitleGreen: false,
-    }
+    };
   },
   props: {
     title: {
@@ -81,25 +87,28 @@ export default defineComponent({
     },
     themeStyles: {
       type: Object as PropType<CSSProperties>,
-      default: () => ({})
+      default: () => ({}),
     },
     buttonsTheme: {
       type: Object as PropType<CSSProperties>,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   title: 'Our counter title',
   methods: {
     decrementHandler(event: number) {
-      this.isMainPageTitleGreen = event < -5 ? true : false
-      console.log('decrement-handler', event)
+      this.isMainPageTitleGreen = event < -5 ? true : false;
+      console.log('decrement-handler', event);
     },
   },
-})
+});
 </script>
 
 <style scoped>
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   flex-grow: 1;
 }

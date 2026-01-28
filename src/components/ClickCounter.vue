@@ -1,27 +1,29 @@
 <template>
   <div>
-    <div class="counter">
-      <h2       
-        :style="[themeStyles, counterTitleColor]"
-      >
+    <div class="add">
+      <!-- <h2 :style="[themeStyles, counterTitleColor]">
         {{ title }}
-      </h2>
-      <div>Count: {{ count }}</div>
-      <div>Double count {{ doubleCount }}</div>
+      </h2> -->
+      <div>Добавить в корзину: {{ count }}</div>
+      <!-- <div>Double count {{ doubleCount }}</div> -->
+       <div class="buttons">
+         <button :style="buttonsTheme" @click="decrement">-</button>
+         <button :style="buttonsTheme" @click="increment">+</button>
+         <button class="btn-delete" :style="buttonsTheme" @click="reset">x</button>
+       </div>
     </div>
-    <button :style="buttonsTheme" @click="increment">Increment++</button>
-    <button :style="buttonsTheme" @click="decrement">Decrement--</button>
-    <button :style="buttonsTheme" @click="reset">Reset</button>  </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, type CSSProperties, type PropType } from 'vue'
+import { defineComponent, type CSSProperties, type PropType } from 'vue';
 
 export default defineComponent({
+  name: 'ClickCounter',
   data() {
     return {
       count: 0,
-    }
+    };
   },
   props: {
     title: {
@@ -30,70 +32,83 @@ export default defineComponent({
     },
     themeStyles: {
       type: Object as PropType<CSSProperties>,
-      default: () => ({})
+      default: () => ({}),
     },
     buttonsTheme: {
       type: Object as PropType<CSSProperties>,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   emits: ['decrement'],
   computed: {
     doubleCount() {
-      return this.count * 2
+      return this.count * 2;
     },
     counterTitleColor() {
-      const styles = {...this.themeStyles}
+      const styles = { ...this.themeStyles };
       if (this.count > 5) {
-        styles.color = 'red'
+        styles.color = 'red';
       }
-      return styles
-    }    
+      return styles;
+    },
   },
   methods: {
     showDecrement() {
-      console.log('decrement')
+      console.log('decrement');
     },
     increment() {
-      this.count++
+      this.count++;
     },
 
     decrement() {
-        // this.showDecrement()
-        this.count--
-        this.$emit('decrement', this.count)
-        console.log('decrement from CC')
+      // this.showDecrement()
+      this.count--;
+      this.$emit('decrement', this.count);
+      console.log('decrement from CC');
     },
     reset() {
-      this.count = 0
+      this.count = 0;
     },
   },
   watch: {
     count: {
       handler(newValue, oldValue) {
-        console.log('newValue', newValue)
-        console.log('oldValue', oldValue)
+        console.log('newValue', newValue);
+        console.log('oldValue', oldValue);
         // if (newValue === 0) alert('Значение равно 0!')
       },
       immediate: true,
       deep: true,
     },
   },
-})
+});
 </script>
 
 <style scoped>
+.add {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 10px;
+  column-gap: 10px;
+}
 button {
-  margin-right: 5px;
-  padding: 5px;
-  width: 110px;
-  border: 1px solid black;
+  /* margin-right: 5px; */
+  /* padding: 5px; */
+  width: 25px;
+  height: 25px;
+  border: 3px solid black;
   border-radius: 5px;
+  border-color: rgba(4, 119, 13);
   cursor: pointer;
 }
 button:hover {
   color: darkslategray;
   border: 2px solid darkslategray;
   font-weight: 700;
+}
+.btn-delete {
+  margin-left: 5px;
+  background-color: rgba(165, 42, 42, 0.9);
 }
 </style>

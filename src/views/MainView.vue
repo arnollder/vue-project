@@ -7,7 +7,7 @@
   >
     <MainContent
         class="border"
-        title="Main Page"
+        title="Гражданский Эшелон"
         :theme-styles="switchTheme"
         :buttonsTheme="buttonsTheme"
       />

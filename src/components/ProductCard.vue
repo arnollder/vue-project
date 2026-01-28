@@ -1,94 +1,89 @@
 <template>
-    <div 
-        class="user-root"
-        :style="buttonsTheme"
-    >
-        <div class="user-info" :style="themeStyles">
-            <slot name="prepend"/>
-            <div class="name">{{ $props.user?.name }}</div>
-            <div class="model">model: {{ $props.user?.model }}</div>
-            <div class="price">цена: {{ $props.user?.price }} ₽</div>
-        </div>
-        <img 
-            :src="$props.user?.img" 
-            class="avatar" 
-            alt="avatar"
-        >
-        <slot name="append"/>
+  <div class="user-root" :style="buttonsTheme">
+    <div class="user-info" :style="themeStyles">
+      <slot name="prepend" />
+      <div class="name">{{ $props.user?.name }}</div>
+      <div class="model">модель: {{ $props.user?.model }}</div>
+      <div class="price">цена: {{ $props.user?.price }} ₽</div>
     </div>
+    <slot name="clickcounter" />
+    <img :src="$props.user?.img" class="avatar" alt="avatar" />
+    <slot name="append" />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType, type CSSProperties, } from 'vue'
+import { defineComponent, type PropType, type CSSProperties } from 'vue';
+import ClickCounter from '@/components/ClickCounter.vue';
 
 interface IUser {
-    name: string,
-    model: string,
-    price: number,
-    img: string
+  name: string;
+  model: string;
+  price: string;
+  img: string;
 }
 
 export default defineComponent({
-    props: {
-        user: {
-            type: Object as PropType<IUser>,
-            default: () => ({
-                name: 'No Name',
-                model: 'No Brand',
-                price: 0,
-                img: 'https://static.bntu.by/bntu/new/staffs/photo_2163_8bd01886c446fc213afa7792f8f8e859.jpg'
-            } as IUser),
-        },  
-        themeStyles: {
-            type: Object as PropType<CSSProperties>,
-            default: () => ({})
-        },
-        buttonsTheme: {
-            type: Object as PropType<CSSProperties>,
-            default: () => ({})
-        }              
+  name: 'ProductCard',
+  components: { ClickCounter },
+  props: {
+    user: {
+      type: Object as PropType<IUser>,
+      default: () =>
+        ({
+          name: 'No Name',
+          model: 'No Brand',
+          price: '0',
+          img: 'https://static.bntu.by/bntu/new/staffs/photo_2163_8bd01886c446fc213afa7792f8f8e859.jpg',
+        }) as IUser,
     },
-})
+    themeStyles: {
+      type: Object as PropType<CSSProperties>,
+      default: () => ({}),
+    },
+    buttonsTheme: {
+      type: Object as PropType<CSSProperties>,
+      default: () => ({}),
+    },
+  },
+});
 </script>
 
 <style scoped>
 .user-root {
-    width: 300px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 10px;
-    border-radius: 12px;
-    overflow: auto;
-    /* box-shadow: 
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 10px;
+  border-radius: 12px;
+  overflow: auto;
+  /* box-shadow: 
         0 0 5px rgba(2, 235, 21, 0.5),
         0 0 10px rgba(2, 235, 21, 0.5),
         0 0 15px rgba(2, 235, 21, 0.7); */
-    box-shadow: 
-        8px 8px 16px rgb(4, 119, 13),
-        inset -1px -1px 10px rgba(2, 235, 21, 0.7),
-        12px 12px 5px rgba(2, 235, 21, 0.5);
-
-
-
+  box-shadow:
+    8px 8px 16px rgb(4, 119, 13),
+    inset -1px -1px 10px rgba(2, 235, 21, 0.7),
+    12px 12px 5px rgba(2, 235, 21, 0.5);
 }
 .user-info {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding-left: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-left: 5px;
 }
 .avatar {
-    width: 100%;
-    height: auto;
-    border: 1px solid black;
-    border-radius: 5px;
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 .name {
-    font-size: 32px;
+  font-size: 32px;
 }
-.age, .role {
-    font-size: 20px;
+.age,
+.role {
+  font-size: 20px;
 }
-
 </style>
