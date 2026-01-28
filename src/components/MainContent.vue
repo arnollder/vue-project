@@ -10,7 +10,7 @@
       /> -->
     </section>
     <section>
-      <h2>Летательные аппараты</h2>
+      <!-- <h2>Летательные аппараты</h2> -->
       <div class="user-blok">
         <ProductCard
           :theme-styles="themeStyles"

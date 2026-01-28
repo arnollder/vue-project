@@ -4,11 +4,11 @@
       <!-- <h2 :style="[themeStyles, counterTitleColor]">
         {{ title }}
       </h2> -->
-      <div>Добавить в корзину: {{ count }}</div>
+      <div>Заказ: {{ count }} шт.</div>
       <!-- <div>Double count {{ doubleCount }}</div> -->
        <div class="buttons">
-         <button :style="buttonsTheme" @click="decrement">-</button>
-         <button :style="buttonsTheme" @click="increment">+</button>
+         <button class="btn" :style="buttonsTheme" @click="decrement">-</button>
+         <button class="btn" :style="buttonsTheme" @click="increment">+</button>
          <button class="btn-delete" :style="buttonsTheme" @click="reset">x</button>
        </div>
     </div>
@@ -97,15 +97,17 @@ button {
   /* padding: 5px; */
   width: 25px;
   height: 25px;
-  border: 3px solid black;
+  border: 1px solid rgba(4, 119, 13);
   border-radius: 9px;
-  border-color: rgba(4, 119, 13);
   cursor: pointer;
 }
 button:hover {
   color: darkslategray;
   border: 2px solid darkslategray;
   font-weight: 700;
+}
+.btn {
+  background-color: rgb(84, 207, 255);
 }
 .btn-delete {
   margin-left: 5px;

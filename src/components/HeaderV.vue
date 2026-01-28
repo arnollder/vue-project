@@ -48,7 +48,8 @@ export default defineComponent({
 <style scoped>
 .header {
   height: 100px;
-  background-color: gray;
+  /* background-color: gray; */
+  background-color: rgba(13, 140, 190, 0.5);
   font-size: 32px;
   display: flex;
   justify-content: center;

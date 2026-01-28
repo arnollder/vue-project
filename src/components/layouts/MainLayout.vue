@@ -4,7 +4,7 @@
   >
     <HeaderV 
         @toggleTheme="toggleTheme"
-        title="Header" 
+        title="Гражданский Эшелон" 
         :style="switchThemeHeaderFooter"
         :buttonsTheme="buttonsTheme"
     />

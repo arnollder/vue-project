@@ -7,7 +7,7 @@
   >
     <MainContent
         class="border"
-        title="Гражданский Эшелон"
+        title="Летательные аппараты"
         :theme-styles="switchTheme"
         :buttonsTheme="buttonsTheme"
       />
@@ -46,7 +46,7 @@ export default defineComponent({
     },
     switchThemeHeaderFooter() {
       return {
-          'background-color': this.isDarkTheme ? '#36373a' : 'gray',
+          'background-color': this.isDarkTheme ? '#36373a' : 'rgba(13, 140, 190, 0.5)',
           color: this.isDarkTheme ? 'darkgray' : 'black',
         }
     },
