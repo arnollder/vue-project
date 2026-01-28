@@ -15,7 +15,7 @@
         <ProductCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
-          :user="{
+          :product="{
             name: 'Самолёт',
             model: 'Ил-103',
             price: '14 000 000',
@@ -34,7 +34,7 @@
         <ProductCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
-          :user="{
+          :product="{
             name: 'Самолёт',
             model: 'Lake-4-200',
             price: '12 000 000',
@@ -53,7 +53,7 @@
         <ProductCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
-          :user="{
+          :product="{
             name: 'Самолёт',
             model: 'Cessna 172B',
             price: '12 500 000',
