@@ -12,34 +12,49 @@
     <section>
       <h2>Пользователи</h2>
       <div class="user-blok">
-        <UserCard
+
+        <ProductCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
-            name: 'Sergey',
-            age: 40,
-            role: 'Teacher',
-            img: 'https://avatars.mds.yandex.net/i?id=b7add193de701e6d161b01a876c09b0e_l-5205087-images-thumbs&n=13'
+            name: 'Самолёт',
+            model: 'Ил-103',
+            price: 14000000,
+            img: 'https://80.img.avito.st/image/1/1.mCLxM7a4NMvHmvbOzR3XNPOSNs1PkrbDh5c2yUGaPMFH.F_uNFpE1Q7RFSyqTuOYj19zatcYWiuKFH2cL8C92mCc'
           }"
         >
-          <template #append>
+          <!-- <template #append>
             <p>*направления: JS, Vue</p>
-          </template>
-        </UserCard>
-        <UserCard
+          </template> -->
+        </ProductCard>
+
+        <ProductCard
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
-            name: 'Arnolder',
-            age: 35,
-            role: 'Student',
-            img: 'https://avatars.mds.yandex.net/i?id=e0da91ccb22989c3c8329f39fcd9e6c9_l-9144721-images-thumbs&n=13'
+            name: 'Самолет-амфибия',
+            model: 'Lake-4-200',
+            price: 12000000,
+            img: 'https://00.img.avito.st/image/1/1.QvCMQra47hm66ywchFNV7vDj7B8y42wR-ubsGzzr5hM6.UyGn9HumuDOdRa2TU3psxWDizh6GlbSMByg6Xdx-07w?cqp=2.TSzMy-m0u9ojo94xoNTr4TIkcUBjMu1L_y5Z6Lr-VHA-3xfoRpsvf1jN4IBF36LEO13sxOCjYv9KRoXzpmAFvKTQ'
           }"
         >
-          <template #prepend>
+          <!-- <template #prepend>
             <h2>Title</h2>
-          </template>
-        </UserCard>
+          </template> -->
+        </ProductCard>
+
+        <ProductCard
+          :theme-styles="themeStyles"
+          :buttonsTheme="buttonsTheme"
+          :user="{
+            name: 'Самолет',
+            model: 'Cessna 172B',
+            price: 12500000,
+            img: 'https://90.img.avito.st/image/1/1.B2A8Gba4q4kKsGmMPjlKGF64qY-CuCmBSr2pi4ywo4OK.eEYfp8xN_xSsdO7f4_MlCdMS2rLiUXoYYoU7jx3E0MA'
+          }"
+        >          
+        </ProductCard>
+
       </div>
     </section>
   </div>
@@ -48,12 +63,12 @@
 <script lang="ts">
 import { defineComponent, type CSSProperties, type PropType } from 'vue'
 import ClickCounter from '@/components/ClickCounter.vue'
-import UserCard from '@/components/UserCard.vue'
+import ProductCard from '@/components/ProductCard.vue'
 
 
 export default defineComponent({
   name: 'MainContent',
-  components: { ClickCounter, UserCard },
+  components: { ClickCounter, ProductCard },
   data() {
     return {
       isMainPageTitleGreen: false,

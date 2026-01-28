@@ -6,8 +6,8 @@
         <div class="user-info" :style="themeStyles">
             <slot name="prepend"/>
             <div class="name">{{ $props.user?.name }}</div>
-            <div class="age">age: {{ $props.user?.age }}</div>
-            <div class="role">role: {{ $props.user?.role }}</div>
+            <div class="model">model: {{ $props.user?.model }}</div>
+            <div class="price">цена: {{ $props.user?.price }} ₽</div>
         </div>
         <img 
             :src="$props.user?.img" 
@@ -23,8 +23,8 @@ import { defineComponent, type PropType, type CSSProperties, } from 'vue'
 
 interface IUser {
     name: string,
-    age: number,
-    role: string,
+    model: string,
+    price: number,
     img: string
 }
 
@@ -34,8 +34,8 @@ export default defineComponent({
             type: Object as PropType<IUser>,
             default: () => ({
                 name: 'No Name',
-                age: 18,
-                role: 'No Role',
+                model: 'No Brand',
+                price: 0,
                 img: 'https://static.bntu.by/bntu/new/staffs/photo_2163_8bd01886c446fc213afa7792f8f8e859.jpg'
             } as IUser),
         },  
@@ -59,19 +59,19 @@ export default defineComponent({
     flex-direction: column;
     justify-content: space-between;
     row-gap: 10px;
-    /* border: 1px solid black; */
-    border-radius: 5px;
+    border-radius: 12px;
     overflow: auto;
-    /* background-color: gray; */
-    box-shadow: 
+    /* box-shadow: 
         0 0 5px rgba(2, 235, 21, 0.5),
         0 0 10px rgba(2, 235, 21, 0.5),
-        0 0 15px rgba(2, 235, 21, 0.7);
+        0 0 15px rgba(2, 235, 21, 0.7); */
+    box-shadow: 
+        8px 8px 16px rgb(4, 119, 13),
+        inset -1px -1px 10px rgba(2, 235, 21, 0.7),
+        12px 12px 5px rgba(2, 235, 21, 0.5);
 
-    /* box-shadow: 
-        0 0 5px #0ff,
-        0 0 10px #0ff,
-        0 0 15px #0ff; */
+
+
 }
 .user-info {
     border: 1px solid black;
