@@ -19,10 +19,11 @@
 </template>
 
 <script lang="ts">
-import MainContent from '@/components/MainContent.vue'
-import SidebarNav from '@/components/SidebarNav.vue'
-import MainLayout from '@/components/layouts/MainLayout.vue'
-import { defineComponent } from 'vue'
+import MainContent from '@/components/layouts/MainContent.vue'
+import FooterV from '@/components/layouts/FooterV.vue'
+import HeaderV from '@/components/layouts/HeaderV.vue'
+import SidebarNav from '@/components/layouts/SidebarNav.vue'
+import { defineComponent, type CSSProperties } from 'vue'
 
 export default defineComponent({
   name: 'MainView',
@@ -33,24 +34,24 @@ export default defineComponent({
     }
   },
   computed: {
-    switchTheme() {
+    switchTheme(): CSSProperties {
       return {
           'background-color': this.isDarkTheme ? '#36373a' : 'white',
           color: this.isDarkTheme ? 'darkgray' : 'black',
         }
     },
-    switchThemeMain() {
+    switchThemeMain(): CSSProperties {
       return {
           'background-color': this.isDarkTheme ? 'darkgray' : undefined,
         }
     },
-    switchThemeHeaderFooter() {
+    switchThemeHeaderFooter(): CSSProperties {
       return {
           'background-color': this.isDarkTheme ? '#36373a' : 'rgba(13, 140, 190, 0.5)',
           color: this.isDarkTheme ? 'darkgray' : 'black',
         }
     },
-    buttonsTheme() {
+    buttonsTheme(): CSSProperties {
       return {
           'background-color': this.isDarkTheme ? 'gray' : undefined,
         }
