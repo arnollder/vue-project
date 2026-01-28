@@ -98,7 +98,7 @@ button {
   width: 25px;
   height: 25px;
   border: 3px solid black;
-  border-radius: 5px;
+  border-radius: 9px;
   border-color: rgba(4, 119, 13);
   cursor: pointer;
 }
