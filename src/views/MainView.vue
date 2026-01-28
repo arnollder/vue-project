@@ -1,17 +1,13 @@
 <template>
-  <div class="root"
-    :style="switchThemeMain"
+  <MainLayout
+    @toggleTheme="toggleTheme"
+    :switchThemeHeaderFooter="switchThemeHeaderFooter"
+    :switchThemeMain="switchThemeMain"
+    :buttonsTheme="buttonsTheme"
   >
-    <HeaderV 
-      @is-dark-theme="toggleThemeHandler" 
-      title="Header" 
-      :style="switchThemeHeaderFooter"
-      :buttonsTheme="buttonsTheme"
-    />
-    <div class="container">
-      <MainContent
+    <MainContent
         class="border"
-        title="Main Page"
+        title="Летательные аппараты"
         :theme-styles="switchTheme"
         :buttonsTheme="buttonsTheme"
       />
@@ -19,12 +15,7 @@
         :theme-styles="switchTheme"
         class="border"
       />
-    </div>
-    <FooterV 
-      title="Footer"
-      :style="switchThemeHeaderFooter"      
-    />
-  </div>
+  </MainLayout>
 </template>
 
 <script lang="ts">
@@ -35,8 +26,8 @@ import SidebarNav from '@/components/layouts/SidebarNav.vue'
 import { defineComponent, type CSSProperties } from 'vue'
 
 export default defineComponent({
-  name: 'TestComponent',
-  components: { SidebarNav, MainContent, HeaderV, FooterV },
+  name: 'MainView',
+  components: { SidebarNav, MainContent, MainLayout},
   data() {
     return {
       isDarkTheme: false,
@@ -51,24 +42,25 @@ export default defineComponent({
     },
     switchThemeMain(): CSSProperties {
       return {
-          'background-color': this.isDarkTheme ? 'darkgray' : 'white',
+          'background-color': this.isDarkTheme ? 'darkgray' : undefined,
         }
     },
     switchThemeHeaderFooter(): CSSProperties {
       return {
-          'background-color': this.isDarkTheme ? '#36373a' : 'gray',
+          'background-color': this.isDarkTheme ? '#36373a' : 'rgba(13, 140, 190, 0.5)',
           color: this.isDarkTheme ? 'darkgray' : 'black',
         }
     },
     buttonsTheme(): CSSProperties {
       return {
-          'background-color': this.isDarkTheme ? 'gray' : 'white',
+          'background-color': this.isDarkTheme ? 'gray' : undefined,
         }
     }
   },
   methods: {
-    toggleThemeHandler() {
-      this.isDarkTheme = !this.isDarkTheme
+    toggleTheme(event: boolean) {
+      this.isDarkTheme = event
+      console.log(event)
     },
   },
 })
