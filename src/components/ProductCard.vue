@@ -20,6 +20,7 @@ interface IUser {
   model: string;
   price: string;
   img: string;
+  alt: string;
 }
 
 export default defineComponent({
@@ -33,6 +34,7 @@ export default defineComponent({
           model: 'No Brand',
           price: '0',
           img: 'https://static.bntu.by/bntu/new/staffs/photo_2163_8bd01886c446fc213afa7792f8f8e859.jpg',
+          alt: 'No Img',
         }) as IUser,
     },
     themeStyles: {
