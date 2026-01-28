@@ -34,7 +34,7 @@
           :theme-styles="themeStyles"
           :buttonsTheme="buttonsTheme"
           :user="{
-            name: 'Самолёт-амфибия',
+            name: 'Самолёт',
             model: 'Lake-4-200',
             price: '12 000 000',
             img: 'https://00.img.avito.st/image/1/1.QvCMQra47hm66ywchFNV7vDj7B8y42wR-ubsGzzr5hM6.UyGn9HumuDOdRa2TU3psxWDizh6GlbSMByg6Xdx-07w?cqp=2.TSzMy-m0u9ojo94xoNTr4TIkcUBjMu1L_y5Z6Lr-VHA-3xfoRpsvf1jN4IBF36LEO13sxOCjYv9KRoXzpmAFvKTQ',
@@ -43,8 +43,8 @@
           <template #clickcounter>
             <ClickCounter />
           </template>
-          <!-- <template #prepend>
-            <h2>Title</h2>
+          <!-- <template #append>
+            <p>* Самолёт-амфибия</p>
           </template> -->
         </ProductCard>
 
