@@ -14,7 +14,6 @@
 
 <script lang="ts">
 import { defineComponent, type PropType, type CSSProperties } from 'vue';
-import ClickCounter from '@/components/ClickCounter.vue';
 
 interface IUser {
   name: string;
@@ -25,7 +24,6 @@ interface IUser {
 
 export default defineComponent({
   name: 'ProductCard',
-  components: { ClickCounter },
   props: {
     user: {
       type: Object as PropType<IUser>,

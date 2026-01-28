@@ -19,10 +19,9 @@
 </template>
 
 <script lang="ts">
-import MainContent from '@/components/layouts/MainContent.vue'
-import FooterV from '@/components/layouts/FooterV.vue'
-import HeaderV from '@/components/layouts/HeaderV.vue'
-import SidebarNav from '@/components/layouts/SidebarNav.vue'
+import MainContent from '@/components/MainContent.vue'
+import MainLayout from '@/components/layouts/MainLayout.vue'
+import SidebarNav from '@/components/SidebarNav.vue'
 import { defineComponent, type CSSProperties } from 'vue'
 
 export default defineComponent({
